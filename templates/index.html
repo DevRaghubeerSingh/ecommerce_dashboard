@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-Commerce Dashboard</title>
+    <link rel="stylesheet" href="/static/css/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>E-Commerce Data Analysis Dashboard</h1>
+      <div class="chart-container">
+        <h2>Sales Trend</h2>
+        <div class="date-filter">
+          <label for="start_date">Start Date:</label>
+          <input type="date" id="start_date" value="2024-01-01" />
+          <label for="end_date">End Date:</label>
+          <input type="date" id="end_date" value="2024-12-31" />
+          <button onclick="updateSalesChart()">Update</button>
+        </div>
+        <canvas id="salesChart"></canvas>
+      </div>
+      <div class="chart-container">
+        <h2>Top Products</h2>
+        <div class="category-filter">
+          <label for="category">Category:</label>
+          <select id="category">
+            <option value="">All Categories</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Clothing">Clothing</option>
+          </select>
+          <button onclick="updateProductsChart()">Update</button>
+        </div>
+        <canvas id="productsChart"></canvas>
+      </div>
+      <div class="chart-container">
+        <h2>Customer Distribution</h2>
+        <div class="country-filter">
+          <label for="country">Country:</label>
+          <select id="country">
+            <option value="">All Countries</option>
+            <option value="USA">USA</option>
+            <option value="UK">UK</option>
+            <option value="Canada">Canada</option>
+            <option value="Australia">Australia</option>
+          </select>
+          <button onclick="updateCustomersChart()">Update</button>
+        </div>
+        <div id="customersChartContainer">
+          <canvas id="customersChart"></canvas>
+        </div>
+        <div id="customersStatContainer" style="display: none">
+          <div class="stat-card">
+            <span id="customersStat"></span>
+          </div>
+        </div>
+      </div>
+      <div class="stat-container">
+        <h2>Average Order Value</h2>
+        <div class="stat-card">
+          <span id="aov">$0.00</span>
+        </div>
+      </div>
+    </div>
+    <script src="/static/js/dashboard.js"></script>
+  </body>
+</html>
